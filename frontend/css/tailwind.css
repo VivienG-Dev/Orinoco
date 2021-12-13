@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .modal {
+    transition: opacity 0.25s ease;
+  }
+
+  body.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+  }
+
+  .input-control.success input {
+    border-color: #09c372;
+  }
+
+  .input-control.error input {
+    border-color: #ff3860;
+  }
+
+  .input-control .error {
+    color: #ff3860;
+  }
+}

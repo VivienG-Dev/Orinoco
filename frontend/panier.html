@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/img/apple-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/index.00d79f11.css">
+    <title>Orinoco Beta</title>
+    <script src="./js/panier.js" defer></script>
+    <script src="./js/quantity.js" defer></script>
+  </head>
+
+  <body class="text-gray-800 antialiased">
+    <nav
+      class="
+        z-50
+        fixed
+        w-full
+        flex flex-wrap
+        bg-primary
+        items-center
+        justify-between
+        px-2
+        py-2
+      "
+    >
+      <div
+        class="
+          container
+          px-4
+          mx-auto
+          flex flex-wrap
+          items-center
+          justify-between
+        "
+      >
+        <div class="w-full relative flex justify-between">
+          <a href="/"><img class="h-14" src="img/logo.png" alt="" /></a>
+          <a href="panier.html">
+            <button
+              class="
+                bg-white
+                text-gray-800
+                active:bg-gray-200
+                font-bold
+                uppercase
+                px-4
+                py-4
+                rounded-lg
+                shadow
+                hover:shadow-md
+                lg:mr-1 lg:mb-0
+                ml-3
+                tracking-wide
+                focus:outline-none focus:ring
+              "
+              type="button"
+              style="transition: all 0.15s ease 0s"
+            >
+              Panier <span class="total-qty"></span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="pb-40 bg-gray-100 pt-32">
+        <div class="container mx-auto">
+          <div class="flex flex-wrap lg:justify-center">
+            <div class="w-full lg:w-4/6 px-4 pb-5">
+              <h1 class="text-center text-2xl lg:text-3xl font-semibold ">Panier</h1>
+            </div>
+            <div class="w-full lg:w-4/6 px-4" id="content">
+              <article>
+                <div
+                  class="
+                    relative
+                    min-w-0
+                    break-words
+                    bg-white
+                    w-full
+                    mb-8
+                    shadow-lg
+                    rounded-lg
+                  "
+                >
+                  <div class="px-4 pt-5 flex justify-around">
+                    <div class="md:flex md:w-full justify-around">
+                      <div>
+                        <label for="">Nom</label>
+                        <h2 class="text-lg lg:text-xl font-semibold">
+                          Free Revisions
+                        </h2>
+                      </div>
+                      <div>
+                        <label for="">Couleur</label>
+                        <p class="text-lg lg:text-xl font-semibold">----</p>
+                      </div>
+                      <div>
+                        <label for="">Quantité</label>
+                        
+                        <p class="text-lg lg:text-xl font-semibold"><button class="minus text-lg font-bold px-2 rounded-md bg-gray-400 hover:bg-gray-500 text-white">-</button> ----
+                          <button class="plus text-lg font-bold px-2 rounded-md bg-gray-500 hover:bg-gray-700 text-white">+</button></p>
+                      </div>
+                      <div>
+                        <label for="">Prix</label>
+                        <p class="text-lg lg:text-xl font-semibold">29,00€</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="px-4 py-5 flex items-center justify-center lg:flex"
+                  >
+                    <a href="/" class="text-indigo-600 hover:text-indigo-900"
+                      >Supprimer</a
+                    >
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="w-full lg:w-4/6 px-4">
+              <div
+                class="
+                  relative
+                  min-w-0
+                  break-words
+                  bg-white
+                  w-full
+                  mb-8
+                  shadow-lg
+                  rounded-lg
+                "
+              >
+                <p
+                  id="total-price"
+                  class="
+                    flex
+                    justify-center
+                    text-lg
+                    lg:text-xl
+                    font-semibold
+                    py-4
+                    px-10
+                  "
+                >
+                  Total : 300€
+                </p>
+              </div>
+            </div>
+            <div class="w-full lg:w-4/6 px-4">
+              <div
+                class="
+                  relative
+                  min-w-0
+                  break-words
+                  bg-white
+                  w-full
+                  mb-8
+                  shadow-lg
+                  rounded-lg
+                "
+              >
+                <form action="#" method="POST" id="form">
+                  <div class="overflow-hidden rounded-lg">
+                    <div class="px-4 py-5 bg-white sm:p-6">
+                      <div class="grid grid-cols-6 gap-6">
+                        <div class="col-span-6 sm:col-span-3 input-control">
+                          <label
+                            for="first-name"
+                            class="block text-sm font-medium text-gray-700"
+                            >Prénom</label
+                          >
+                          <input
+                            type="text"
+                            name="first-name"
+                            id="first-name"
+                            class="
+                              mt-1
+                              focus:ring-indigo-500 focus:border-indigo-500
+                              block
+                              w-full
+                              border border-gray-300
+                              px-2
+                              py-2
+                              shadow-sm
+                              sm:text-sm
+                              rounded-lg
+                            "
+                          >
+                          <div class="error"></div>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 input-control">
+                          <label
+                            for="last-name"
+                            class="block text-sm font-medium text-gray-700"
+                            >Nom</label
+                          >
+                          <input
+                            type="text"
+                            name="last-name"
+                            id="last-name"
+                            class="
+                              mt-1
+                              focus:ring-indigo-500 focus:border-indigo-500
+                              block
+                              w-full
+                              shadow-sm
+                              sm:text-sm
+                              px-2
+                              py-2
+                              border border-gray-300
+                              rounded-lg
+                            "
+                          >
+                          <div class="error"></div>
+                        </div>
+
+                        <div class="col-span-6 input-control">
+                          <label
+                            for="address"
+                            class="block text-sm font-medium text-gray-700"
+                            >Adresse</label
+                          >
+                          <input
+                            type="text"
+                            name="address"
+                            id="address"
+                            class="
+                              mt-1
+                              focus:ring-indigo-500 focus:border-indigo-500
+                              block
+                              w-full
+                              shadow-sm
+                              sm:text-sm
+                              px-2
+                              py-2
+                              border border-gray-300
+                              rounded-lg
+                            "
+                          >
+                          <div class="error"></div>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 input-control">
+                          <label
+                            for="city"
+                            class="block text-sm font-medium text-gray-700"
+                            >Ville</label
+                          >
+                          <input
+                            type="text"
+                            name="city"
+                            id="city"
+                            class="
+                              mt-1
+                              focus:ring-indigo-500 focus:border-indigo-500
+                              block
+                              w-full
+                              shadow-sm
+                              sm:text-sm
+                              px-2
+                              py-2
+                              border border-gray-300
+                              rounded-lg
+                            "
+                          >
+                          <div class="error"></div>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 input-control">
+                          <label
+                            for="email"
+                            class="block text-sm font-medium text-gray-700"
+                            >Email</label
+                          >
+                          <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            class="
+                              mt-1
+                              focus:ring-indigo-500 focus:border-indigo-500
+                              block
+                              w-full
+                              shadow-sm
+                              sm:text-sm
+                              px-2
+                              py-2
+                              border border-gray-300
+                              rounded-lg
+                            "
+                          >
+                          <div class="error"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                      <button
+                        type="submit"
+                        id="submit"
+                        class="
+                          inline-flex
+                          justify-center
+                          py-2
+                          px-4
+                          border border-transparent
+                          shadow-sm
+                          text-sm
+                          font-medium
+                          rounded-md
+                          text-white
+                          bg-indigo-600
+                          hover:bg-indigo-700
+                          focus:outline-none
+                          focus:ring-2
+                          focus:ring-offset-2
+                          focus:ring-indigo-500
+                        "
+                      >
+                        Procéder au paiement
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="w-full lg:w-4/6 px-4">
+              <div class="flex justify-end">
+                <button
+                  type="submit"
+                  class="
+                    btn-clearCart
+                    w-40
+                    bg-red-600
+                    border border-transparent
+                    rounded-md
+                    py-1
+                    px-1
+                    flex
+                    items-center
+                    justify-center
+                    text-base
+                    font-medium
+                    text-white
+                    hover:bg-red-700
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-offset-2
+                    focus:ring-red-500
+                  "
+                >
+                  Vider le panier
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="relative">
+        <div
+          class="
+            bottom-auto
+            top-0
+            left-0
+            right-0
+            w-full
+            absolute
+            pointer-events-none
+            -mt-20
+          "
+          style="height: 80px"
+        >
+          <svg
+            class="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              class="text-white fill-current"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
+        </div>
+      </section>
+      <!-- SVG Line ends -->
+      <section class="pt-20 pb-48">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap justify-center text-center mb-24">
+            <div class="w-full lg:w-6/12 px-4">
+              <h2 class="text-4xl font-semibold">Nos héros</h2>
+              <p class="text-lg leading-relaxed m-4 text-gray-600">
+                Après des années de recherche, nos 4 héros sont enfin présent pour nous offrir
+                les meilleurs nounours de la galaxie (101% bio, sans colorant ni arome artificiel)
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/vivieng.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">VivienG</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    Web Developer
+                  </p>
+                  <div class="mt-6">
+                    <a href="https://twitter.com/vivieng_webdev">
+                      <button
+                      class="
+                        bg-blue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-twitter"></i></button
+                    >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/noursatron.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">Noursatron 3000</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    Marketing
+                  </p>
+                  <div class="mt-6">
+                    <button
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-google"></i></button
+                    ><button
+                      class="
+                        bg-blue-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/teddy.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">Teddy</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    UI/UX Designer
+                  </p>
+                  <div class="mt-6">
+                    <button
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-google"></i></button
+                    ><button
+                      class="
+                        bg-blue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-twitter"></i></button
+                    ><button
+                      class="
+                        bg-gray-800
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/bob.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">Bob</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    Founder and CEO
+                  </p>
+                  <div class="mt-6">
+                    <button
+                      class="
+                        bg-pink-500
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-dribbble"></i></button
+                    ><button
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-google"></i></button
+                    ><button
+                      class="
+                        bg-blue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-twitter"></i></button
+                    ><button
+                      class="
+                        bg-gray-800
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Team ends -->
+    </main>
+    <footer class="relative bg-gray-300 pt-8 pb-6">
+      <div
+        class="
+          bottom-auto
+          top-0
+          left-0
+          right-0
+          w-full
+          absolute
+          pointer-events-none
+          -mt-20
+        "
+        style="height: 80px"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+      <!-- SVG Line ends -->
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4">
+            <h4 class="text-3xl font-semibold">Gardons le contact !</h4>
+            <h5 class="text-lg mt-0 mb-2 text-gray-700">
+              Vous pouvez nous contacter sur différents réseaux.
+            </h5>
+            <div class="mt-6">
+              <button
+                class="
+                  bg-white
+                  text-blue-400
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-twitter"></i></button
+              ><button
+                class="
+                  bg-white
+                  text-blue-600
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-facebook-square"></i></button
+              ><button
+                class="
+                  bg-white
+                  text-pink-400
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-dribbble"></i></button
+              ><button
+                class="
+                  bg-white
+                  text-gray-900
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-github"></i>
+              </button>
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="flex flex-wrap items-top mb-6">
+              <div class="w-full lg:w-4/12 px-4 ml-auto">
+                <span
+                  class="
+                    block
+                    uppercase
+                    text-gray-600 text-sm
+                    font-semibold
+                    mb-2
+                  "
+                  >Liens utiles</span
+                >
+                <ul class="list-unstyled">
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://www.creative-tim.com/presentation"
+                      >A propos</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://blog.creative-tim.com"
+                      >Blog</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://www.github.com/creativetimofficial"
+                      >Github</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://www.creative-tim.com/bootstrap-themes/free"
+                      >Produits gratuit</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full lg:w-4/12 px-4">
+                <span
+                  class="
+                    block
+                    uppercase
+                    text-gray-600 text-sm
+                    font-semibold
+                    mb-2
+                  "
+                  >Ressources</span
+                >
+                <ul class="list-unstyled">
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://creative-tim.com/terms"
+                      >Termes et conditions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://creative-tim.com/privacy"
+                      >Vie privée</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://creative-tim.com/contact-us"
+                      >Nous contacter</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-400" />
+        <div
+          class="flex flex-wrap items-center md:justify-between justify-center"
+        >
+          <div class="w-full px-4 mx-auto text-center">
+            <div class="text-sm text-gray-600 font-semibold py-1">
+              Copyright © 2021 - Orinoco Project by
+              <a
+                href="https://www.vivieng.com/"
+                class="text-gray-600 hover:text-gray-900"
+                >VivienG</a
+              >
+              <br />
+              Original design from Tailwind Starter Kit by
+              <a
+                href="https://www.creative-tim.com"
+                class="text-gray-600 hover:text-gray-900"
+                >Creative Tim</a
+              >.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+  </body>
+</html>

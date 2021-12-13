@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/img/apple-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/index.00d79f11.css">
+    <title>Orinoco Beta</title>
+    <script src="./js/article.js" defer></script>
+    <script src="./js/quantity.js" defer></script>
+  </head>
+
+  <body class="text-gray-800 antialiased">
+    <nav
+      class="
+        z-50
+        fixed
+        w-full
+        flex flex-wrap
+        bg-primary
+        items-center
+        justify-between
+        px-2
+        py-2
+      "
+    >
+      <div
+        class="
+          container
+          px-4
+          mx-auto
+          flex flex-wrap
+          items-center
+          justify-between
+        "
+      >
+        <div class="w-full relative flex justify-between">
+          <a href="/"><img class="h-14" src="img/logo.png" alt="" /></a>
+          <a href="panier.html">
+            <button
+              class="
+                bg-white
+                text-gray-800
+                active:bg-gray-200
+                font-bold
+                uppercase
+                px-4
+                py-4
+                rounded-lg
+                shadow
+                hover:shadow-md
+                lg:mr-1 lg:mb-0
+                ml-3
+                tracking-wide
+                focus:outline-none focus:ring
+              "
+              type="button"
+              style="transition: all 0.15s ease 0s"
+            >
+              Panier <span class="total-qty"></span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="pb-40 bg-gray-100 pt-32">
+        <div class="container mx-auto">
+          <div class="flex flex-wrap lg:justify-center" id="content">
+            <article class="w-full lg:w-5/6 px-4">
+              <div
+                class="
+                  relative
+                  flex flex-col
+                  min-w-0
+                  break-words
+                  bg-white
+                  w-full
+                  mb-8
+                  shadow-lg
+                  rounded-lg
+                "
+              >
+                <div class="px-4 py-5 flex-auto lg:flex">
+                  <div
+                    class="
+                      text-center
+                      inline-flex
+                      items-center
+                      justify-center
+                      mb-5
+                      lg:mb-0 lg:mr-5
+                      w-full
+                      lg:w-2/4
+                    "
+                  >
+                    <img
+                      class="
+                        itemImage
+                        rounded-lg
+                        object-cover
+                        h-64
+                        w-full
+                        lg:h-full
+                      "
+                      src=""
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="
+                      flex flex-col
+                      justify-between
+                      mb-4
+                      space-y-7
+                      lg:ml-10
+                      lg:mr-10
+                      lg:w-2/4
+                      lg:mb-0
+                      lg:flex-col
+                      lg:justify-start
+                    "
+                  >
+                    <div class="flex justify-between">
+                      <h2
+                        class="itemName text-xl lg:text-2xl font-semibold"
+                      ></h2>
+                      <span
+                        class="
+                          itemPrice
+                          p-4
+                          lg:text-xl
+                          text-center
+                          inline-flex
+                          items-center
+                          justify-center
+                          w-81
+                          h-5
+                          rounded-lg
+                          font-semibold
+                          bg-primary
+                        "
+                      ></span>
+                    </div>
+                    <div>
+                      <label
+                        for="colors"
+                        class="block text-sm font-medium text-gray-700"
+                        >Couleurs</label
+                      >
+                      <select
+                        id="colors"
+                        name="colors"
+                        autocomplete="colors"
+                        class="
+                          mt-1
+                          block
+                          w-2/4
+                          py-2
+                          px-3
+                          border border-gray-300
+                          bg-white
+                          rounded-md
+                          shadow-sm
+                          focus:outline-none
+                          focus:ring-indigo-500
+                          focus:border-indigo-500
+                          sm:text-sm
+                        "
+                      >
+                        <option value="">Lorem</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label
+                        for="quantity"
+                        class="block text-sm font-medium text-gray-700"
+                        >Quantité</label
+                      >
+                      <select
+                        id="quantity"
+                        name="quantity"
+                        autocomplete="quantity"
+                        class="
+                          mt-1
+                          block
+                          w-2/4
+                          py-2
+                          px-3
+                          border border-gray-300
+                          bg-white
+                          rounded-md
+                          shadow-sm
+                          focus:outline-none
+                          focus:ring-indigo-500
+                          focus:border-indigo-500
+                          sm:text-sm
+                        "
+                      >
+                        <option value="">1</option>
+                      </select>
+                    </div>
+                    <p class="itemDescription mt-2 mb-4 text-gray-600"></p>
+                    <button
+                      type="submit"
+                      id="sendCart"
+                      class="
+                        modal-open
+                        mt-10
+                        w-full
+                        bg-green-600
+                        border border-transparent
+                        rounded-md
+                        py-3
+                        px-8
+                        flex
+                        items-center
+                        justify-center
+                        text-base
+                        font-medium
+                        text-white
+                        hover:bg-green-700
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-offset-2
+                        focus:ring-green-500
+                      "
+                    >
+                      Ajouter au panier
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="relative">
+        <div
+          class="
+            bottom-auto
+            top-0
+            left-0
+            right-0
+            w-full
+            absolute
+            pointer-events-none
+            -mt-20
+          "
+          style="height: 80px"
+        >
+          <svg
+            class="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              class="text-white fill-current"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
+        </div>
+      </section>
+      <!-- SVG Line ends -->
+      <section class="pt-20 pb-48">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap justify-center text-center mb-24">
+            <div class="w-full lg:w-6/12 px-4">
+              <h2 class="text-4xl font-semibold">Nos héros</h2>
+              <p class="text-lg leading-relaxed m-4 text-gray-600">
+                Après des années de recherche, nos 4 héros sont enfin présent
+                pour nous offrir les meilleurs nounours de la galaxie (101% bio,
+                sans colorant ni arome artificiel)
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/vivieng.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">VivienG</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    Web Developer
+                  </p>
+                  <div class="mt-6">
+                    <a href="https://twitter.com/vivieng_webdev">
+                      <button
+                        class="
+                          bg-blue-400
+                          text-white
+                          w-8
+                          h-8
+                          rounded-full
+                          outline-none
+                          focus:outline-none
+                          mr-1
+                          mb-1
+                        "
+                        type="button"
+                      >
+                        <i class="fab fa-twitter"></i>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/noursatron.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">Noursatron 3000</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    Marketing
+                  </p>
+                  <div class="mt-6">
+                    <button
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-google"></i></button
+                    ><button
+                      class="
+                        bg-blue-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/teddy.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">Teddy</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    UI/UX Designer
+                  </p>
+                  <div class="mt-6">
+                    <button
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-google"></i></button
+                    ><button
+                      class="
+                        bg-blue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-twitter"></i></button
+                    ><button
+                      class="
+                        bg-gray-800
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div class="px-6">
+                <img
+                  alt="..."
+                  src="./assets/img/bob.jpg"
+                  class="shadow-lg rounded-full max-w-full mx-auto"
+                  style="max-width: 120px"
+                />
+                <div class="pt-6 text-center">
+                  <h5 class="text-xl font-bold">Bob</h5>
+                  <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                    Founder and CEO
+                  </p>
+                  <div class="mt-6">
+                    <button
+                      class="
+                        bg-pink-500
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-dribbble"></i></button
+                    ><button
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-google"></i></button
+                    ><button
+                      class="
+                        bg-blue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-twitter"></i></button
+                    ><button
+                      class="
+                        bg-gray-800
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
+                      type="button"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Team ends -->
+      <div
+        class="
+          modal
+          opacity-0
+          pointer-events-none
+          fixed
+          w-full
+          h-full
+          top-0
+          left-0
+          flex
+          items-center
+          justify-center
+        "
+      >
+        <div
+          class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"
+        ></div>
+
+        <div
+          class="
+            modal-container
+            bg-white
+            w-11/12
+            md:max-w-lg
+            mx-auto
+            rounded-lg
+            shadow-lg
+            z-50
+            overflow-y-auto
+          "
+        >
+          <div
+            class="
+              modal-close
+              absolute
+              top-0
+              right-0
+              cursor-pointer
+              flex flex-col
+              items-center
+              mt-4
+              mr-4
+              text-white text-sm
+              z-50
+            "
+          >
+            <svg
+              class="fill-current text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+            >
+              <path
+                d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+              ></path>
+            </svg>
+            <span class="text-sm">(Esc)</span>
+          </div>
+
+          <!-- Add margin if you want to see some of the overlay behind the modal-->
+          <div class="modal-content py-4 text-center px-6">
+            <!--Title-->
+            <div class="flex justify-between items-center pb-3">
+              <p class="text-2xl uppercase">
+                <span class="font-bold">Et hop !</span> c'est dans votre panier
+              </p>
+              <div class="modal-close cursor-pointer z-50">
+                <svg
+                  class="fill-current text-black"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+
+            <!--Body-->
+            <hr />
+
+            <!--Footer-->
+            <div class="flex justify-center pt-2">
+              <a href="/panier.html"
+                ><button
+                  class="
+                    px-4
+                    bg-transparent
+                    p-3
+                    rounded-lg
+                    text-indigo-500
+                    hover:bg-gray-100 hover:text-indigo-400
+                    mr-2
+                  "
+                >
+                  Voir mon panier
+                </button></a
+              >
+              <button
+                class="
+                  modal-close
+                  px-4
+                  bg-indigo-500
+                  p-3
+                  rounded-lg
+                  text-white
+                  hover:bg-indigo-400
+                "
+              >
+                Continuer mes achats
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal ends -->
+    </main>
+    <footer class="relative bg-gray-300 pt-8 pb-6">
+      <div
+        class="
+          bottom-auto
+          top-0
+          left-0
+          right-0
+          w-full
+          absolute
+          pointer-events-none
+          -mt-20
+        "
+        style="height: 80px"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+      <!-- SVG Line ends -->
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4">
+            <h4 class="text-3xl font-semibold">Gardons le contact !</h4>
+            <h5 class="text-lg mt-0 mb-2 text-gray-700">
+              Vous pouvez nous contacter sur différents réseaux.
+            </h5>
+            <div class="mt-6">
+              <button
+                class="
+                  bg-white
+                  text-blue-400
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-twitter"></i></button
+              ><button
+                class="
+                  bg-white
+                  text-blue-600
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-facebook-square"></i></button
+              ><button
+                class="
+                  bg-white
+                  text-pink-400
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-dribbble"></i></button
+              ><button
+                class="
+                  bg-white
+                  text-gray-900
+                  shadow-lg
+                  font-normal
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  align-center
+                  rounded-full
+                  outline-none
+                  focus:outline-none
+                  mr-2
+                  p-3
+                "
+                type="button"
+              >
+                <i class="flex fab fa-github"></i>
+              </button>
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="flex flex-wrap items-top mb-6">
+              <div class="w-full lg:w-4/12 px-4 ml-auto">
+                <span
+                  class="
+                    block
+                    uppercase
+                    text-gray-600 text-sm
+                    font-semibold
+                    mb-2
+                  "
+                  >Liens utiles</span
+                >
+                <ul class="list-unstyled">
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://www.creative-tim.com/presentation"
+                      >A propos</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://blog.creative-tim.com"
+                      >Blog</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://www.github.com/creativetimofficial"
+                      >Github</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://www.creative-tim.com/bootstrap-themes/free"
+                      >Produits gratuit</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full lg:w-4/12 px-4">
+                <span
+                  class="
+                    block
+                    uppercase
+                    text-gray-600 text-sm
+                    font-semibold
+                    mb-2
+                  "
+                  >Ressources</span
+                >
+                <ul class="list-unstyled">
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://creative-tim.com/terms"
+                      >Termes et conditions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://creative-tim.com/privacy"
+                      >Vie privée</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="
+                        text-gray-700
+                        hover:text-gray-900
+                        font-semibold
+                        block
+                        pb-2
+                        text-sm
+                      "
+                      href="https://creative-tim.com/contact-us"
+                      >Nous contacter</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-400" />
+        <div
+          class="flex flex-wrap items-center md:justify-between justify-center"
+        >
+          <div class="w-full px-4 mx-auto text-center">
+            <div class="text-sm text-gray-600 font-semibold py-1">
+              Copyright © 2021 - Orinoco Project by
+              <a
+                href="https://www.vivieng.com/"
+                class="text-gray-600 hover:text-gray-900"
+                >VivienG</a
+              >
+              <br />
+              Original design from Tailwind Starter Kit by
+              <a
+                href="https://www.creative-tim.com"
+                class="text-gray-600 hover:text-gray-900"
+                >Creative Tim</a
+              >.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+  </body>
+</html>
