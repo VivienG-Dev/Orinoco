@@ -101,7 +101,7 @@ function displayCart() {
 }
 
 // Afficher le total des articles 
-function saveTotalQuantity() {
+function updateTotalQuantity() {
   const displayQty = document.querySelector(".total-qty");
 
   // On prépare une variable contenant 0
@@ -132,7 +132,7 @@ const decrementQuantity = () => {
       }
       localStorage.setItem("products", JSON.stringify(products));
       totalPrice();
-      saveTotalQuantity();
+      updateTotalQuantity();
       quantity[i].innerText = `${products[i].quantity}`;
       totalProduct[i].innerText = `${products[i].prixProduit * products[i].quantity}€`;
     });
@@ -156,7 +156,7 @@ const incrementQuantity = () => {
       }
       localStorage.setItem("products", JSON.stringify(products));
       totalPrice();
-      saveTotalQuantity();
+      updateTotalQuantity();
       quantity[i].innerText = `${products[i].quantity}`;
       totalProduct[i].innerText = `${products[i].prixProduit * products[i].quantity}€`;
     });
