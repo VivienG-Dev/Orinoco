@@ -344,7 +344,6 @@ function dataForm() {
         .then((res) => res.json())
         .then((data) => {
           localStorage.removeItem("products");
-          localStorage.setItem("orderId", data.orderId);
           document.location.href = `confirmation.html?orderId=${data.orderId}`;
         })
         .catch((error) => {
