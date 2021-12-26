@@ -345,7 +345,7 @@ function dataForm() {
         .then((data) => {
           localStorage.removeItem("products");
           localStorage.setItem("orderId", data.orderId);
-          document.location.href = `confirmation.html`;
+          document.location.href = `confirmation.html?orderId=${data.orderId}`;
         })
         .catch((error) => {
           alert("Il y a eu une erreur : " + error);
