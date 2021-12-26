@@ -1,7 +1,7 @@
 (async function () {
   const productId = paramUrl("id");
   const productData = await getProductData(productId);
-  if(productData){
+  if(productData) {
     displayProduct(productData);
     getColors(productData);
     saveProduct(productData);
