@@ -9,8 +9,21 @@ function getProducts() {
   return fetch("http://localhost:3000/api/teddies")
     .then((res) => res.json())
     .then((products) => products)
-    .catch((error) => {
-      console.error("Error:", error);
+    .catch(() => {
+      let divError = document.createElement("div");
+      let divTitle = document.createElement("h2");
+      let divDesc = document.createElement("p");
+    
+      divError.setAttribute("class", "w-full lg:w-6/12 px-4 pt-32")
+      divTitle.setAttribute("class", "text-4xl font-semibold")
+      divDesc.setAttribute("class", "text-lg leading-relaxed m-4 text-gray-600")
+    
+      document.getElementById("error").appendChild(divError)
+      divError.appendChild(divTitle)
+      divError.appendChild(divDesc)
+
+      divTitle.textContent = "Erreur"
+      divDesc.textContent = "Aucun produits n'est disponible pour le moment"
     });
 }
 
@@ -112,21 +125,6 @@ function displayProducts(products) {
       //     </article>
       //     `;
     }); 
-  } else {
-    let divError = document.createElement("div");
-    let divTitle = document.createElement("h2");
-    let divDesc = document.createElement("p");
-  
-    divError.setAttribute("class", "w-full lg:w-6/12 px-4 pt-32")
-    divTitle.setAttribute("class", "text-4xl font-semibold")
-    divDesc.setAttribute("class", "text-lg leading-relaxed m-4 text-gray-600")
-  
-    document.getElementById("error").appendChild(divError)
-    divError.appendChild(divTitle)
-    divError.appendChild(divDesc)
-
-    divTitle.textContent = "Erreur"
-    divDesc.textContent = "Aucun produits n'est disponible pour le moment"
   }
   // Implémentation de la variable output dans la page index.html
   // document.getElementById("content").innerHTML = output;

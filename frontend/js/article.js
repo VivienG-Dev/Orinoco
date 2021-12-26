@@ -1,10 +1,12 @@
 (async function () {
   const productId = paramUrl("id");
   const productData = await getProductData(productId);
-  displayProduct(productData);
-  getColors(productData);
-  saveProduct(productData);
-  getQuantity();
+  if(productData){
+    displayProduct(productData);
+    getColors(productData);
+    saveProduct(productData);
+    getQuantity();
+  }
 })();
 
 // Extraction de l'ID du produit, à partir de l'URL
@@ -18,12 +20,29 @@ function getProductData(productId) {
     .then((res) => res.json())
     .then((data) => data)
     .catch((error) => {
-      console.error("Error:", error);
+      let divError = document.createElement("div");
+      let divTitle = document.createElement("h2");
+      let divDesc = document.createElement("p");
+      let product = document.getElementById('product');
+    
+      divError.setAttribute("class", "w-full lg:w-6/12 px-4 pt-32")
+      divTitle.setAttribute("class", "text-4xl font-semibold")
+      divDesc.setAttribute("class", "text-lg leading-relaxed m-4 text-gray-600")
+    
+      product.remove();
+      document.getElementById("content").appendChild(divError)
+      divError.appendChild(divTitle)
+      divError.appendChild(divDesc)
+
+
+      divTitle.textContent = "Erreur"
+      divDesc.textContent = "Aucun produits n'est disponible pour le moment"
     });
 }
 
 // Récupération d'un produit en passant par l'ID de ce même produit et fetch afin de l'afficher dans la page article.html
 function displayProduct(data) {
+  console.log(data)
   // Mise en forme du prix des articles en euros
   const price = new Intl.NumberFormat("fr-FR", {
     style: "currency",
