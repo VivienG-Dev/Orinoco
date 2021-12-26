@@ -1,4 +1,4 @@
-// Fonction auto appelée au chargement de la page
+// Fonction auto appelée (auto-exécutable) au chargement de la page
 (async function () {
   const products = await getProducts();
   displayProducts(products);
